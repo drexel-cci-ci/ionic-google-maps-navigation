@@ -112,6 +112,13 @@ const parameters = {
 };
 ```
 
+add API key in `src/index.html`:
+
+```html
+<script async defer type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=(API KEY)&v=3.exp&libraries=places">
+  </script>
+```
+
 
 
 Install `HTTP` plugin:
