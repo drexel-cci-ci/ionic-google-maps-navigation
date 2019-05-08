@@ -1,14 +1,43 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>
-      Ionic Blank
-    </ion-title>
+    <!--    starting point-->
+    <ion-searchbar
+            clearIcon
+            showCancelButton
+            placeholder="Search Starting Point"
+            [(ngModel)]="autocompleteStartingPoint.input"
+            (ionInput)="updateSearchResults(SEARCH_MODE.STARTING_POINT)"
+    ></ion-searchbar>
+
+    <!--    destination-->
+    <ion-searchbar
+            clearIcon
+            showCancelButton
+            placeholder="Search Destination"
+            [(ngModel)]="autocompleteDestination.input"
+            (ionInput)="updateSearchResults(SEARCH_MODE.DESTINATION)"
+    ></ion-searchbar>
+
+      <ion-button expand="block" (click)="getDirections()">
+          Get Directions
+      </ion-button>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <div class="ion-padding">
-    The world is your oyster.
-    <p>If you get lost, the <a target="_blank" rel="noopener" href="https://ionicframework.com/docs/">docs</a> will be your guide.</p>
+
+  <!-- predicted locations -->
+  <ion-list [hidden]="autocompleteItems.length == 0">
+    <ion-item button *ngFor="let item of autocompleteItems" (click)="selectSearchResult(item)">
+      <ion-label>
+        {{ item.description }}
+      </ion-label>
+    </ion-item>
+  </ion-list>
+
+
+  <!-- Google Maps Canvas -->
+  <div style="height: 100%; width: 100%" id="map_canvas">
   </div>
+
 </ion-content>
