@@ -13,7 +13,7 @@ Also, follow this tutorial in a separate project. This folder contains a working
     NOTE: Make sure you enable Maps SDK for iOS, Maps SDK for Android, and Diections API 
     in Google Cloud console.
     ```
-2. Replace (API Key) with your working API Key in `./config.xml`, `package.json` and 
+2. Replace (API Key) with your working API Key in `./config.xml`, `package.json`, `src/index.html` and 
 `src/app/services/google-maps/google-maps.service.ts`
 3. Run `npm i` to install dependencies. 
     - NOTE: If you need to install `node`, this is the [best way](https://yoember.com/nodejs/the-best-way-to-install-node-js/) to do it
